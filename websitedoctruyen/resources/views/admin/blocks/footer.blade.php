@@ -1,8 +1,8 @@
 <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
-    <b>Version</b> 3.0.5
+    <b>Web truyện</b> Nhóm 8
     </div>
-    <strong>Nhóm 8 &copy; 2020 <a href="http://adminlte.io">4 Thành Viên</a>.</strong>
+    <strong>Nhóm 8 &copy; 2020 <a href="#">4 Thành Viên</a>.</strong>
 </footer>
 <!-- Control Sidebar -->
 <aside class="control-sidebar control-sidebar-dark">
