@@ -1,9 +1,9 @@
 @extends('admin.master')
 @section('content')
-@section('h3','Thêm mới chuyên mục')
+@section('h3','Thêm mới tác giả')
 @section('button','Tạo Mới')
   <!-- Main content -->
-<form method="POST" action="{{route('admin.category.store')}}">
+<form method="POST" action="{{route('admin.author.store')}}">
 @csrf
   <section class="content">
     <div class="container-fluid">
@@ -18,33 +18,29 @@
             <!-- /.card-header -->
             <div class="card-body">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Tên chuyên mục</label>
-                    <input type="text" name="name" class="form-control" id="exampleText" placeholder="Nhập tên của chuyên mục">
+                    <label for="exampleInputEmail1">Tên Tác Giả</label>
+                    <input type="text" name="name" class="form-control" id="exampleText" placeholder="Nhập tên của tác giả">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Từ khóa tìm kiếm</label>
-                    <input type="text" name="keyword" class="form-control" id="exampleText" placeholder="Từ khóa 1,từ khóa 2,từ khóa 3">
+                    <label >Chuyên mục cha</label>
+                    <select name="keyword" class="form-control">
+                        <option value="0">Please choose your author</option>
+                    </select>
+                  </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Giới Thiệu Tác Giả</label>
+                    <textarea name="description" class="form-control" rows="5" cols="5" id="exampleText"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Tên chuyên mục</label>
-                    <input type="text" name="name" class="form-control" id="exampleText" placeholder="Nhập tên của chuyên mục">
-                </div>
-                <div class="form-group">
-                  <label >Chuyên mục cha</label>
-                  <select name="parent_id" class="form-control">
-                      <option value="0">Please choose your category</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Mô Tả</label>
+                    <label for="exampleInputEmail1">Mô Tả Tác Giả</label>
                     <textarea name="description" class="form-control" rows="5" cols="5" id="exampleText"></textarea>
                 </div>
                 <div class="form-group col-12">
                   <button type="submit" class="btn btn-primary float-left col-5"></i> 
                       @yield('button')
                   </button>
-                  <button type="button" onclick="location.href='{{route('admin.category.list')}}'" class="btn btn-primary float-right col-5"></i> 
-                    Quay lại
+                  <button type="button" onclick="location.href='{{route('admin.author.list')}}'" class="btn btn-primary float-right col-5"></i> 
+                    Trở về
                   </button>
                 </div>
             </div>

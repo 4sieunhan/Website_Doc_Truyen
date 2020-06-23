@@ -24,7 +24,7 @@
                 </li>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('admin.author.list')}}" class="nav-link">
                       <i class="nav-icon fas fa-user-alt"></i>
                       <p>Tác Giả</p>
                     </a>

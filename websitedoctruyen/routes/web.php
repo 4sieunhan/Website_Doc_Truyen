@@ -26,4 +26,12 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         Route::post('update/{id}','CategoryController@update')->name('update');
         Route::get('delete/{id}','CategoryController@destroy')->name('destroy');
     });
+    Route::prefix('author')->name('author.')->group(function(){
+        Route::get('list','AuthorController@list')->name('list');
+        Route::get('create','AuthorController@create')->name('create');
+        Route::post('store','AuthorController@store')->name('store');
+        Route::get('edit/{id}','AuthorController@edit')->name('edit');
+        Route::post('update/{id}','AuthorController@update')->name('update');
+        Route::get('delete/{id}','AuthorController@destroy')->name('destroy');
+    });
 });
