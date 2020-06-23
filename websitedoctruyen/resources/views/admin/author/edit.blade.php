@@ -22,15 +22,9 @@
                     <input type="text" name="name" value="{{$authors->name}}" class="form-control" id="exampleText" placeholder="Nhập tên của chuyên mục">
                 </div>
                 <div class="form-group">
-                  <label >Chuyên mục cha</label>
-                  <select name="keyword" value="{{$authors->keyword}}" class="form-control">
-                      <option value="0">Please choose your author</option>
-                  </select>
+                  <label for="exampleInputEmail1">Từ khóa tìm kiếm</label>
+                  <input type="text" name="keyword" class="form-control" id="exampleText" placeholder="Từ khóa 1,từ khóa 2,từ khóa 3">
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Giới Thiệu Tác Giả</label>
-                  <textarea name="description" value="{{$authors->description}}" class="form-control" rows="5" cols="5" id="exampleText"></textarea>
-              </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Mô Tả Tác Giả</label>
                     <textarea name="description" value="{{$authors->description}}" class="form-control" rows="5" cols="5" id="exampleText"></textarea>

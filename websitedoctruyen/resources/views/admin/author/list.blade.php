@@ -31,8 +31,6 @@
                 <tr>
                   <th>STT</th>
                   <th>Tên Tác Giả</th>
-                  <th>Giới Thiệu Tác Giả</th>
-                  <th>Chuyên Mục Cha</th>
                   <th>Action</th>
                 </tr>
                 </thead>
@@ -41,8 +39,6 @@
                   <tr>
                     <td>{{$loop->iteration}}</td>
                     <td>{{$ats->name}}</td>
-                    <td>{{$ats->description}}</td>
-                    <td>{{$ats->keyword}}</td>
 
                     <td>
                       <a class="btn btn-info btn-sm" href="{{route('admin.author.edit',['id' => $ats->id])}}" >

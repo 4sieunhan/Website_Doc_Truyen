@@ -26,10 +26,6 @@
                     <input type="text" name="keyword" class="form-control" id="exampleText" placeholder="Từ khóa 1,từ khóa 2,từ khóa 3">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Tên chuyên mục</label>
-                    <input type="text" name="name" class="form-control" id="exampleText" placeholder="Nhập tên của chuyên mục">
-                </div>
-                <div class="form-group">
                   <label >Chuyên mục cha</label>
                   <select name="parent_id" class="form-control">
                       <option value="0">Please choose your category</option>
