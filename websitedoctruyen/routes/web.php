@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
+Route::get('/home',['as'=>'home', function () {
     return view('admin.master');
-});
+}]);
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
     Route::prefix('category')->name('category.')->group(function(){
@@ -34,4 +34,15 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         Route::post('update/{id}','AuthorController@update')->name('update');
         Route::get('delete/{id}','AuthorController@destroy')->name('destroy');
     });
+    Route::prefix('story')->name('story.')->group(function(){
+        Route::get('list','StoryController@list')->name('list');
+        Route::get('create','StoryController@create')->name('create');
+        Route::post('store','StoryController@store')->name('store');
+        Route::get('edit/{id}','StoryController@edit')->name('edit');
+        Route::post('update/{id}','StoryController@update')->name('update');
+        Route::get('delete/{id}','StoryController@destroy')->name('destroy');
+    });
 });
+Route::any('{all?}',function(){
+    return view('admin.master');
+})->where('all','(.*)');

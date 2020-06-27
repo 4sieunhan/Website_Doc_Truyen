@@ -3,37 +3,35 @@
 <head>
     @include('admin.blocks.head')
 </head>
-<body class="hold-transition sidebar-mini">
-    <!-- Site wrapper -->
-    <div class="wrapper">
-        <!-- Navbar -->
-        @include('admin.blocks.nav')
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
 
-        <!-- /.navbar -->
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    @include('admin.blocks.nav')
+  </nav>
+  <!-- /.navbar -->
 
-        <!-- Main Sidebar Container -->
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    @include('admin.blocks.aside')
+  </aside>
 
-        @include('admin.blocks.aside')
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    @yield('content')
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    @include('admin.blocks.footer')
+  </footer>
 
-        <!-- Content Wrapper. Contains page content -->
-
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <!-- Main content -->
-
-            <!-- Default box -->
-            @yield('content')
-                <!-- /.card-footer-->
-            </div>
-            <!-- /.card -->
-
-            <!-- /.content -->
-        </div>
-        <!-- /.content-wrapper -->
-        @include('admin.blocks.footer')
-        <!-- /.control-sidebar -->
-    </div>
-    <!-- ./wrapper -->
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
     @include('admin.blocks.foot')
 </body>
 </html>

@@ -15,10 +15,10 @@ class CreateStoryAuthorsTable extends Migration
     {
         Schema::create('story_authors', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('story_id');
-            $table->foreign('story_id')->references('id')->on('stories')->onDelete('cascade');
-            $table->unsignedBigInteger('author_id');
-            $table->foreign('author_id')->references('id')->on('authors')->onDelete('cascade');
+            $table->unsignedBigInteger('stories_id');
+            $table->foreign('stories_id')->references('id')->on('stories')->onDelete('cascade');
+            $table->unsignedBigInteger('authors_id');
+            $table->foreign('authors_id')->references('id')->on('authors')->onDelete('cascade');
             $table->timestamps();
         });
     }

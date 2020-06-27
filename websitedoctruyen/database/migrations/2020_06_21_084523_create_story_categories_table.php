@@ -15,10 +15,10 @@ class CreateStoryCategoriesTable extends Migration
     {
         Schema::create('story_categories', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('story_id');
-            $table->foreign('story_id')->references('id')->on('stories')->onDelete('cascade');
-            $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->unsignedBigInteger('stories_id');
+            $table->foreign('stories_id')->references('id')->on('stories')->onDelete('cascade');
+            $table->unsignedBigInteger('categories_id');
+            $table->foreign('categories_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
         });
     }

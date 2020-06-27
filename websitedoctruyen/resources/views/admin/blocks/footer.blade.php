@@ -1,10 +1,5 @@
-<footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-    <b>Web truyện</b> Nhóm 8
+<strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 3.0.5
     </div>
-    <strong>Nhóm 8 &copy; 2020 <a href="#">4 Thành Viên</a>.</strong>
-</footer>
-<!-- Control Sidebar -->
-<aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-</aside>
