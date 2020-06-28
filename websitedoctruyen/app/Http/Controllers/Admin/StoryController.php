@@ -5,6 +5,7 @@ use DB,DateTime;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Stories;
+use App\Models\Chapters;
 
 class StoryController extends Controller
 {
@@ -77,9 +78,9 @@ class StoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        
     }
 
     /**

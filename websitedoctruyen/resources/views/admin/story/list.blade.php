@@ -42,12 +42,14 @@
                     <th>{{$str->name}}</th>
                   <td>
                   @foreach($str->category as $rl)
-                    {{$rl->name}},
+                    {{$loop->first ? '' : ', '}}
+                    {{$rl->name}}
                   @endforeach
                   </td>
                   <td>
                   @foreach($str->author as $rl)
-                    {{$rl->name}},
+                    {{$loop->first ? '' : ', '}}
+                    {{$rl->name}}
                   @endforeach
                   </td>
                     <td> 
@@ -58,7 +60,7 @@
                         @endif
                     </td>
                     <td>
-                    <a class="btn btn-primary btn-sm" href="">
+                    <a class="btn btn-primary btn-sm" href="{{route('admin.story.chapter.list',['id' => $str->id])}}">
                         <i class="fas fa-folder"></i>View</a>
                       <a class="btn btn-info btn-sm" href="{{route('admin.story.edit',['id' => $str->id])}}" >
                         <i class="fas fa-pencil-alt"></i>Edit</a>

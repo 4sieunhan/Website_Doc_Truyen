@@ -16,11 +16,11 @@ class CreateChaptersTable extends Migration
         Schema::create('chapters', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('subname');
-            $table->string('alias');
-            $table->longText('content');
-            $table->bigInteger('view');
-            $table->unsignedBigInteger('story_id');
+            $table->string('subname')->nullable();
+            $table->string('alias')->nullable();
+            $table->longText('content')->nullable();
+            $table->bigInteger('view')->nullable();
+            $table->unsignedBigInteger('story_id')->nullable();
             $table->foreign('story_id')->references('id')->on('stories')->onDelete('cascade');
             $table->timestamps();
         });

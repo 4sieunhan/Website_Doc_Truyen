@@ -94,8 +94,8 @@
     <!-- /.container-fluid -->
   </section>
 </form>
+
 <script>
- 
   // Replace the <textarea id="editor1"> with an CKEditor
   // instance, using default configurations.
   CKEDITOR.replace( 'description', {

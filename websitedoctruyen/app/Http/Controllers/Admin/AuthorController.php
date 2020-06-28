@@ -65,7 +65,7 @@ class AuthorController extends Controller
     public function edit($id)
     {
         $data = DB::table('authors')->where('id',$id)->first();
-        return view('admin.author.edit',['athors' => $data]);
+        return view('admin.author.edit',['authors' => $data]);
     }
 
     /**

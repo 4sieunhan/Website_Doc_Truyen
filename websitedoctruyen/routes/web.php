@@ -35,12 +35,23 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         Route::get('delete/{id}','AuthorController@destroy')->name('destroy');
     });
     Route::prefix('story')->name('story.')->group(function(){
+        Route::get('show','StoryController@show')->name('show');
         Route::get('list','StoryController@list')->name('list');
         Route::get('create','StoryController@create')->name('create');
         Route::post('store','StoryController@store')->name('store');
         Route::get('edit/{id}','StoryController@edit')->name('edit');
         Route::post('update/{id}','StoryController@update')->name('update');
         Route::get('delete/{id}','StoryController@destroy')->name('destroy');
+
+        Route::prefix('chapter')->name('chapter.')->group(function(){
+            Route::get('show','ChapterController@show')->name('show');
+            Route::get('list/{id}','ChapterController@list')->name('list');
+            Route::get('create/{id}','ChapterController@create')->name('create');
+            Route::post('store/{id}','ChapterController@store')->name('store');
+            Route::get('edit/{id}','ChapterController@edit')->name('edit');
+            Route::post('update/{id}','ChapterController@update')->name('update');
+            Route::get('delete/{id}','ChapterController@destroy')->name('destroy');
+        });
     });
 });
 Route::any('{all?}',function(){

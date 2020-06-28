@@ -8,9 +8,9 @@ class Chapters extends Model
 {
     protected $table = 'chapters';
 
-    protected $fillable = ['name','content'];
+    protected $fillable = ['name','subname','content'];
 
-    public $timestamps = false;
+    public $timestamps = true;
 
     public function story(){
         return $this->belongsTo('App\Models\Stories');
