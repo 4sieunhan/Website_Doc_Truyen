@@ -28,12 +28,12 @@
           </select>
         </div>
         <div class="form-group">
-            <label for="#">Mô Tả Ngắn</label>
-            <input type="text" name="description" class="form-control" id="exampleInputEmail3" placeholder="Description">
+          <label for="exampleTextarea1">Mô Tả Ngắn</label>
+          <textarea class="form-control" name="description" id="exampleTextarea1" rows="4"></textarea>
         </div>
         <div class="form-group">
-            <label for="#">Mô Tả Nội Dung</label>
-            <input type="text" name="content" class="form-control" id="exampleInputEmail3" placeholder="Content">
+          <label for="exampleTextarea1">Mô Tả Nội Dung</label>
+          <textarea class="form-control" name="content" id="exampleTextarea1" rows="4"></textarea>
         </div>
         <div class="form-group">
           <label for="#">Từ Khóa Tìm Kiếm</label>

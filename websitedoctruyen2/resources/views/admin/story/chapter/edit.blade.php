@@ -16,8 +16,8 @@
           <input type="text" name="name" class="form-control" id="exampleInputName1" placeholder="Name">
         </div>
         <div class="form-group">
-            <label for="#">Nội Dung</label>
-            <input type="text" name="content" class="form-control" id="exampleInputEmail3" placeholder="Content">
+          <label for="exampleTextarea1">Nội Dung</label>
+          <textarea class="form-control" name="content" id="exampleTextarea1" rows="4"></textarea>
         </div>
         <button type="submit" class="btn btn-primary mr-2">Tạo Mới</button>
         <button type="button" onclick="location.href='{{route('admin.story.chapter.list',['id' => $chapters->story->id])}}'" class="btn btn-light">Quay Lại</button>
