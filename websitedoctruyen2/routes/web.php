@@ -41,6 +41,16 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         Route::get('edit/{id}','StoryController@edit')->name('edit');
         Route::post('update/{id}','StoryController@update')->name('update');
         Route::get('destroy/{id}','StoryController@destroy')->name('destroy');
+
+        Route::prefix('chapter')->name('chapter.')->group(function(){
+            Route::get('showall','ChapterController@show')->name('show');
+            Route::get('list/{id}','ChapterController@list')->name('list');
+            Route::get('create/{id}','ChapterController@create')->name('create');
+            Route::post('store/{id}','ChapterController@store')->name('store');
+            Route::get('edit/{id}','ChapterController@edit')->name('edit');
+            Route::post('update/{id}','ChapterController@update')->name('update');
+            Route::get('destroy/{id}','ChapterController@destroy')->name('destroy');
+        });
     });
 });
 

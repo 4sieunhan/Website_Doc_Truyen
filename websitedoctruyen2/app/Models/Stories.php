@@ -19,4 +19,8 @@ class Stories extends Model
     public function author(){
         return $this->belongsToMany('App\Models\Authors','story_authors');
     }
+
+    public function chapter(){
+        return $this->hasMany('App\Models\Chapters');
+    }
 }

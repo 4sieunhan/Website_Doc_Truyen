@@ -28,24 +28,24 @@
                       <td>
                       @foreach($str->category as $rl)
                         {{$loop->first ? '' : ', '}}
-                        {{$rl->name}}
+                        <label class="badge badge-info">{{$rl->name}}</label>
                       @endforeach
                       </td>
                       <td>
                       @foreach($str->author as $rl)
                         {{$loop->first ? '' : ', '}}
-                        {{$rl->name}}
+                        <label class="badge badge-info">{{$rl->name}}</label>
                       @endforeach
                       </td>
                       <td> 
                           @if($str->status == 1 )
-                              Hoàn Thành
+                              <label class="badge badge-success">Hoàn Thành</label>
                           @else
-                              Đang cập nhật
+                              <label class="badge badge-danger">Đang Cập Nhật</label>
                           @endif
                       </td>
                       <td>
-                        <button type="button" onclick="location.href=''" class="btn btn-info btn-rounded btn-icon">
+                        <button type="button" onclick="location.href='{{route('admin.story.chapter.list',['id' => $str->id])}}'" class="btn btn-info btn-rounded btn-icon">
                           <i class="mdi mdi-view-column"></i>
                         </button>
                         <button type="button" onclick="location.href='{{route('admin.story.edit',['id' => $str->id])}}'" class="btn btn-primary btn-rounded btn-icon">
