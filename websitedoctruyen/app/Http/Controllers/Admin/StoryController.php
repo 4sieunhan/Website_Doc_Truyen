@@ -40,14 +40,17 @@ class StoryController extends Controller
     public function store(Request $request)
     {
         $stories = new Stories;
-
+        
+        $file = $request->image;
+        $file->move('upload', $file->getClientOriginalName());
+        
         //them du lieu vao trong table('stories')
         $InsertStories = Stories::insertGetId([
             'name' => $request->input('name'),
             'content' => $request->input('content'),
             'description' => $request->input('description'),
-            'image' => $request->input('image'),
             'keyword' => $request->input('keyword'),
+            'image' => $file->getClientOriginalName(),
             'source' => $request->input('source'),
             'status' => $request->input('status')
         ]);

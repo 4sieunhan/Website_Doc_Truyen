@@ -29,32 +29,47 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Tên truyên</th>
-                  <th>Chuyên mục</th>
-                  <th>Tác giả</th>
-                  <th>Trạng thái</th>
-                  <th>Action</th>
+                  <th>
+                    Tên truyện
+                  </th>
+                  <th>
+                    Ảnh
+                  </th>
+                  <th>
+                    Chuyên mục
+                  </th>
+                  <th>
+                    Tác giả
+                  </th>
+                  <th>
+                    Trạng thái
+                  </th>
+                  <th>
+                    Action
+                  </th>
                 </tr>
                 </thead>
                 <tbody>
                   @foreach($stories as $str)
                   <tr>
                     <th>{{$str->name}}</th>
-                  <td>
-                  @foreach($str->category as $rl)
-                    {{$loop->first ? '' : ', '}}
-                    {{$rl->name}}
-                  @endforeach
+                  <td><img src="{{URL::to('/upload/' . $str->image)}}" alt="" style="width:60px;height:60px;"/>
                   </td>
                   <td>
-                  @foreach($str->author as $rl)
+                    @foreach($str->category as $rl)
                     {{$loop->first ? '' : ', '}}
                     {{$rl->name}}
-                  @endforeach
+                    @endforeach
+                  </td>
+                  <td>
+                    @foreach($str->author as $rl)
+                    {{$loop->first ? '' : ', '}}
+                    {{$rl->name}}
+                    @endforeach
                   </td>
                     <td> 
                         @if($str->status == 1 )
-                            Hoàn Thành
+                          Hoàn Thành
                         @else
                             Đang cập nhật
                         @endif

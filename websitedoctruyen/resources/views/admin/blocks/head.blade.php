@@ -30,3 +30,6 @@
 <link rel="stylesheet" href="{{asset('select/dist/css/bootstrap-select.css')}}">
 <!-- ckeditor-->
 <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
+<style>
+
+</style>
