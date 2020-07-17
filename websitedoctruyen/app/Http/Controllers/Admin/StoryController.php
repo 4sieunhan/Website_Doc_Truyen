@@ -39,6 +39,32 @@ class StoryController extends Controller
      */
     public function store(Request $request)
     {
+        $messages = [
+            'name.required' => 'Tiêu đề bắt buộc nhập',
+            'description.required' => 'Nội dung mô tả bắt buộc nhập',
+            'keyword.required'=> 'Từ khóa bắt buộc phải nhập',
+            'content.required' => 'Nội dung bắt buộc nhập',
+            'source.required' => 'Nguồn truyện bắt buộc nhập',
+            'authors_id.required' => 'Tác giả bắt buộc chọn',
+            'categories_id.required' => 'Chuyên mục bắt buộc chọn',
+            'keyword.max' => 'Từ khóa không được vượt quá 15 ký tự',
+            'name.max' => 'Từ khóa không được vượt quá 100 ký tự',
+            'source.max' => 'Từ khóa không được vượt quá 25 ký tự',
+            'description.max' => 'Từ khóa không được vượt quá 255 ký tự',
+            'content.max' => 'Từ khóa không được vượt quá 255 ký tự',
+            'keyword.min'=> 'Nhập tối thiểu 5 ký tự',
+            'name.min' => 'Nhập tối thiểu 10 ký tự',
+            'source.min' => 'Nhập tối thiểu 5 ký tự',
+        ];
+        $validatedData =$request->validate([
+            'name' => 'required|min:10|max:100|',
+            'keyword' => 'required|min:5|max:15|',
+            'description' => 'required|max:255|',
+            'content' => 'required|max:255|',
+            'source' => 'required|min:5|max:25|',
+            'authors_id' => 'required',
+            'categories_id' => 'required',
+        ],$messages);
         $stories = new Stories;
         
         $file = $request->image;
@@ -107,6 +133,32 @@ class StoryController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $messages = [
+            'name.required' => 'Tiêu đề bắt buộc nhập',
+            'description.required' => 'Nội dung mô tả bắt buộc nhập',
+            'keyword.required'=> 'Từ khóa bắt buộc phải nhập',
+            'content.required' => 'Nội dung bắt buộc nhập',
+            'source.required' => 'Nguồn truyện bắt buộc nhập',
+            'authors_id.required' => 'Tác giả bắt buộc chọn',
+            'categories_id.required' => 'Chuyên mục bắt buộc chọn',
+            'keyword.max' => 'Từ khóa không được vượt quá 15 ký tự',
+            'name.max' => 'Từ khóa không được vượt quá 100 ký tự',
+            'source.max' => 'Từ khóa không được vượt quá 25 ký tự',
+            'description.max' => 'Từ khóa không được vượt quá 255 ký tự',
+            'content.max' => 'Từ khóa không được vượt quá 255 ký tự',
+            'keyword.min'=> 'Nhập tối thiểu 5 ký tự',
+            'name.min' => 'Nhập tối thiểu 10 ký tự',
+            'source.min' => 'Nhập tối thiểu 5 ký tự',
+        ];
+        $validatedData =$request->validate([
+            'name' => 'required|min:10|max:100|',
+            'keyword' => 'required|min:5|max:15|',
+            'description' => 'required|max:255|',
+            'content' => 'required|max:255|',
+            'source' => 'required|min:5|max:25|',
+            'authors_id' => 'required',
+            'categories_id' => 'required',
+        ],$messages);
         //update edit view story
         $data= array(
             'name' => $request->name,

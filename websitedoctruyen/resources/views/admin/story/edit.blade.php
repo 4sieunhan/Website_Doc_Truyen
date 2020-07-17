@@ -20,7 +20,9 @@
                 <div class="form-group">
                     <label for="exampleInputEmail1">Tên truyện</label>
                     <input type="text" name="name" value="{{$stories->name}}" class="form-control" id="exampleText" placeholder="Nhập tên truyện">
-                </div>
+                </div>@if ($errors->has('name'))
+                <p class="help is-danger" STYLE="COLOR:RED;">{{ $errors->first('name') }}</p>
+            @endif
                 <div class="form-group">
                   <label >Chuyên mục</label>
                   <select id="done" class="selectpicker" name="categories_id[]"  multiple data-done-button="true">
@@ -28,7 +30,9 @@
                         <option value="{{$category->id}}">{{$category->name}}</option>
                     @endforeach
                   </select>
-                </div>
+                </div>@if ($errors->has('categories_id'))
+                <p class="help is-danger" STYLE="COLOR:RED;">{{ $errors->first('categories_id') }}</p>
+            @endif
                 <div class="form-group">
                   <label >Tác giả</label>
                   <select id="done" class="selectpicker" name="authors_id[]"  multiple data-done-button="true">
@@ -36,7 +40,9 @@
                       <option value="{{$author->id}}">{{$author->name}}</option>
                     @endforeach
                   </select> 
-                </div>
+                </div>@if ($errors->has('authors_id'))
+                <p class="help is-danger" STYLE="COLOR:RED;">{{ $errors->first('authors_id') }}</p>
+            @endif
                 <div class="form-group">
                   <label for="">Mô tả ngắn</label>
                   <div class="card-body pad">
@@ -45,7 +51,9 @@
                       </textarea>
                     </div>
                   </div>
-              </div>
+              </div>@if ($errors->has('description'))
+              <p class="help is-danger" STYLE="COLOR:RED;">{{ $errors->first('description') }}</p>
+          @endif
               <div class="form-group">
                 <label for="">Mô tả nội dung</label>
                 <div class="card-body pad">
@@ -54,7 +62,9 @@
                     </textarea>
                   </div>
                 </div>
-              </div>
+              </div>@if ($errors->has('content'))
+              <p class="help is-danger" STYLE="COLOR:RED;">{{ $errors->first('content') }}</p>
+          @endif
               <div class="form-group">
                 <label for="">Ảnh đại diện</label>
                 <input name="image" type="file" class="form-control" />
@@ -62,11 +72,15 @@
               <div class="form-group">
                 <label for="">Từ khóa</label>
                 <input type="text" name="keyword" class="form-control" id="exampleText" placeholder="Nhập từ khóa">
-              </div>
+              </div>@if ($errors->has('keyword'))
+              <p class="help is-danger" STYLE="COLOR:RED;">{{ $errors->first('keyword') }}</p>
+          @endif
               <div class="form-group">
                 <label for="">Nguồn truyện</label>
                 <input type="text" name="source" class="form-control" id="exampleText" placeholder="Nhập nguồn truyện">
-              </div>
+              </div>@if ($errors->has('source'))
+              <p class="help is-danger" STYLE="COLOR:RED;">{{ $errors->first('source') }}</p>
+          @endif
               <div class="form-group">
                 <label >Tình trạng</label>
                 <select name="status" class="form-control">

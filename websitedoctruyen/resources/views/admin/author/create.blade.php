@@ -20,15 +20,22 @@
                 <div class="form-group">
                     <label for="exampleInputEmail1">Tên Tác Giả</label>
                     <input type="text" name="name" class="form-control" id="exampleText" placeholder="Nhập tên của tác giả">
-                </div>
+                  </div>   
+                  @if ($errors->has('name'))
+                  <p class="help is-danger "STYLE="COLOR:RED;">{{ $errors->first('name') }}</p>
+              @endif
                 <div class="form-group">
                   <label for="exampleInputEmail1">Từ khóa tìm kiếm</label>
                   <input type="text" name="keyword" class="form-control" id="exampleText" placeholder="Từ khóa 1,từ khóa 2,từ khóa 3">
-                </div>
+                </div>  @if ($errors->has('keyword'))
+                <p class="help is-danger" STYLE="COLOR:RED;"> {{ $errors->first('keyword') }}</p>
+            @endif
                 <div class="form-group">
                     <label for="exampleInputEmail1">Mô Tả Tác Giả</label>
                     <textarea name="description" class="form-control" rows="5" cols="5" id="exampleText"></textarea>
-                </div>
+                </div>  @if ($errors->has('description'))
+                <p class="help is-danger" STYLE="COLOR:RED;">{{ $errors->first('description') }}</p>
+            @endif
                 <div class="form-group col-12">
                   <button type="submit" class="btn btn-primary float-left col-5"></i> 
                       @yield('button')

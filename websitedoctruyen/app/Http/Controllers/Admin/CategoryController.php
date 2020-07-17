@@ -36,6 +36,23 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $messages = [
+            'name.required' => 'Tiêu đề bắt buộc nhập',
+            'description.required' => 'Nội dung mô tả bắt buộc nhập',
+            'keyword.required'=> 'Từ khóa bắt buộc phải nhập',
+            'keyword.max' => 'Từ khóa không được vượt quá 15 ký tự',
+            'name.max' => 'Từ khóa không được vượt quá 35 ký tự',
+            'description.max' => 'Từ khóa không được vượt quá 255 ký tự',
+            'keyword.min'=> 'Nhập tối thiểu 5 ký tự',
+            'name.min' => 'Nhập tối thiểu 10 ký tự',
+
+
+        ];
+        $validatedData =$request->validate([
+            'name' => 'required|min:10|max:35|',
+            'keyword' => 'required|min:5|max:15|',
+            'description' => 'required|max:255|',
+        ],$messages);
         $data = $request->except('_token');
         $data['created_at'] = new DateTime;
         $data['updated_at'] = new DateTime;
@@ -75,6 +92,23 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $messages = [
+            'name.required' => 'Tiêu đề bắt buộc nhập',
+            'description.required' => 'Nội dung mô tả bắt buộc nhập',
+            'keyword.required'=> 'Từ khóa bắt buộc phải nhập',
+            'keyword.max' => 'Từ khóa không được vượt quá 15 ký tự',
+            'name.max' => 'Từ khóa không được vượt quá 35 ký tự',
+            'description.max' => 'Từ khóa không được vượt quá 255 ký tự',
+            'keyword.min'=> 'Nhập tối thiểu 5 ký tự',
+            'name.min' => 'Nhập tối thiểu 10 ký tự',
+
+
+        ];
+        $validatedData =$request->validate([
+            'name' => 'required|min:10|max:35|',
+            'keyword' => 'required|min:5|max:15|',
+            'description' => 'required|max:255|',
+        ],$messages);
         $data = $request->except('_token');
         $data['updated_at'] = new DateTime;
         DB::table('categories')->where('id',$id)->update($data);

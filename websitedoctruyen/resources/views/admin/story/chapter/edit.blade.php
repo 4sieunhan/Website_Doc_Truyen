@@ -23,7 +23,9 @@
                 <div class="form-group">
                     <label for="exampleInputEmail1">Tên chương</label>
                     <input type="text" name="name" class="form-control" id="exampleText" placeholder="Nhập tên chương">
-                </div>  
+                </div>  @if ($errors->has('name'))
+                <p class="help is-danger" STYLE="COLOR:RED;">{{ $errors->first('name') }}</p>
+            @endif
                 <div class="form-group">
                     <label for="">Nội dung</label>
                     <div class="card-body pad">
@@ -32,7 +34,9 @@
                         </textarea>
                       </div>
                     </div>
-                </div>
+                </div>@if ($errors->has('content'))
+                <p class="help is-danger" STYLE="COLOR:RED;">{{ $errors->first('content') }}</p>
+            @endif
                 <div class="form-group col-12">
                   <button type="submit" class="btn btn-primary float-left col-5"></i> 
                       @yield('button')
