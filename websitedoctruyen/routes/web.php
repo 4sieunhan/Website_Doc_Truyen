@@ -17,6 +17,12 @@ Route::get('/home',['as'=>'home', function () {
     return view('admin.master');
 }]);
 
+Route::namespace('Login')->prefix('login')->name('login.')->group(function(){
+    Route::get('dangnhap','LoginController@dangnhap')->name('dangnhap');
+    Route::get('dangky','LoginController@dangky')->name('dangky');
+    Route::get('logout','LoginController@logout')->name('logout');
+});
+
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
     Route::prefix('category')->name('category.')->group(function(){
         Route::get('list','CategoryController@list')->name('list');
@@ -54,6 +60,6 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         });
     });
 });
-Route::any('{all?}',function(){
+/*Route::any('{all?}',function(){
     return view('admin.master');
-})->where('all','(.*)');
+})->where('all','(.*)');*/
