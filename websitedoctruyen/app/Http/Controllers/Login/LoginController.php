@@ -13,6 +13,7 @@ class LoginController extends Controller
     public function dangnhap () {
         return view('login.login');
     }
+
     public function makedangnhap(Request $request){
         /*$messages = [
             'email.required' => 'Vui Lòng Điền Email',
@@ -61,7 +62,7 @@ class LoginController extends Controller
                 return redirect()->route('admin.home');
             } else {
                 // Kiểm tra không đúng sẽ hiển thị thông báo lỗi
-                Session::flash('error', 'Email hoặc mật khẩu không đúng!');
+                Session::flash('error', 'Email hoặc Mật Khẩu Không Đúng!');
                 return redirect()->route('login.dangnhap');
             }
         }
@@ -138,5 +139,5 @@ class LoginController extends Controller
     public function logout(){
         Auth::logout();
         return redirect()->route('login.dangnhap');
-    }
+    }   
 }

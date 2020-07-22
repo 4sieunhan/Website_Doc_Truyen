@@ -21,6 +21,12 @@ Route::namespace('Login')->prefix('login')->name('login.')->group(function(){
     Route::get('logout','LoginController@logout')->name('logout');
 });
 
+Route::namespace('Login')->prefix('login')->name('login.')->group(function(){
+    Route::get('dangnhap','LoginController@dangnhap')->name('dangnhap');
+    Route::get('dangky','LoginController@dangky')->name('dangky');
+    Route::get('logout','LoginController@logout')->name('logout');
+});
+
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
     Route::middleware('check_login')->group(function(){
         Route::get('home','HomeController@index')->name('home');
@@ -61,6 +67,8 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         });
     });
 });
+
 Route::middleware('check_login')->group(function(){
     Route::any('{all?}','Admin\HomeController@index')->where('all','(.*)');
 });
+
