@@ -14,8 +14,8 @@ class AddLevelStatusToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->tinyInteger('level')->after('password')->default(0);
-            $table->tinyInteger('status')->after('level')->default(0);
+            $table->tinyInteger('level')->after('password')->default(0)->nullable();
+            $table->tinyInteger('status')->after('level')->default(0)->nullable();
         });
     }
 

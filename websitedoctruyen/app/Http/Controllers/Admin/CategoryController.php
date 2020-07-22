@@ -41,15 +41,13 @@ class CategoryController extends Controller
             'description.required' => 'Nội dung mô tả bắt buộc nhập',
             'keyword.required'=> 'Từ khóa bắt buộc phải nhập',
             'keyword.max' => 'Từ khóa không được vượt quá 15 ký tự',
-            'name.max' => 'Từ khóa không được vượt quá 35 ký tự',
+            'name.max' => 'Từ khóa không được vượt quá 30 ký tự',
             'description.max' => 'Từ khóa không được vượt quá 255 ký tự',
             'keyword.min'=> 'Nhập tối thiểu 5 ký tự',
-            'name.min' => 'Nhập tối thiểu 10 ký tự',
-
-
+            'name.min' => 'Nhập tối thiểu 2 ký tự',
         ];
         $validatedData =$request->validate([
-            'name' => 'required|min:10|max:35|',
+            'name' => 'required|min:2|max:30|',
             'keyword' => 'required|min:5|max:15|',
             'description' => 'required|max:255|',
         ],$messages);

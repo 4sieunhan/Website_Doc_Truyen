@@ -13,11 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home',['as'=>'home', function () {
-    return view('admin.master');
-}]);
+Route::namespace('Login')->prefix('login')->name('login.')->group(function(){
+    Route::get('dangnhap','LoginController@dangnhap')->name('dangnhap');
+    Route::post('dangnhap','LoginController@makedangnhap')->name('makedangnhap');
+    Route::get('dangky','LoginController@dangky')->name('dangky');
+    Route::post('store','LoginController@store')->name('store');
+    Route::get('logout','LoginController@logout')->name('logout');
+});
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
+    Route::middleware('check_login')->group(function(){
+        Route::get('home','HomeController@index')->name('home');
+    });
     Route::prefix('category')->name('category.')->group(function(){
         Route::get('list','CategoryController@list')->name('list');
         Route::get('create','CategoryController@create')->name('create');
@@ -54,6 +61,6 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         });
     });
 });
-Route::any('{all?}',function(){
-    return view('admin.master');
-})->where('all','(.*)');
+Route::middleware('check_login')->group(function(){
+    Route::any('{all?}','Admin\HomeController@index')->where('all','(.*)');
+});
