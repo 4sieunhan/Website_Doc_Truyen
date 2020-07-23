@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use DB,DateTime;
+
+use DateTime;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
