@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Login;
 use App\Models\Users;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Session;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
@@ -96,8 +96,8 @@ class LoginController extends Controller
 
         return redirect()->route('login.dangky');*/
         $rules = [
-            'email' => 'required|unique:users|email:rfc,dns|max:255',
-            'password'         => 'required|min:4|max:15|confirmed',
+            'email' => 'required|unique:users|email:rfc,dns|ends_with:laravel.com,gmail.com',
+            'password'         => 'required|min:6|max:15|confirmed|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])./',
             'password_confirmation' => 'required_with:password'
         ];
         $messages = [
@@ -105,8 +105,10 @@ class LoginController extends Controller
             'email.unique' => 'Email Đã Tồn Tại',
             'email.max' => 'Tối Đa 255 Ký Tự',
             'email.email' => 'Email Không Hợp Lý',
+            'email.ends_with'=> 'vidu@gmail.com,@laravel.com',
             'password.required' => 'Vui Lòng Nhập Mật Khẩu',
-            'password.min' => 'Nhập Hơn 4 Ký Tự',
+            'password.regex'=> 'ít nhất 1 chữ in hoa và in thường',
+            'password.min' => 'Nhập Hơn 6 Ký Tự',
             'password.max' => 'Tối Đa 15 Ký Tự',
             'password.confirmed' => 'Mật Khẩu Không Trùng Khớp',
             'password_confirmation.required_with' => 'Chưa Nhập Lại Mật Khẩu'

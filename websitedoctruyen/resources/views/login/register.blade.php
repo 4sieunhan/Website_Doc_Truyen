@@ -21,12 +21,15 @@
 				<p class="help is-danger" STYLE="COLOR:RED;">{{ $errors->first('email') }}</p>
 				@endif
 				<p>Nhập Mật Khẩu</p>
-				<input type="password" name="password" placeholder="Nhập Mật Khẩu">
+				<input type="password" name="password" id="myInput" placeholder="Nhập Mật Khẩu">
 				@if ($errors->has('password'))
 				<p class="help is-danger" STYLE="COLOR:RED;">{{ $errors->first('password') }}</p>
 				@endif
 				<p>Nhập Lại Mật Khẩu</p>
-				<input type="password" name="password_confirmation" placeholder="Nhập Mật Khẩu">
+				<input type="password" name="password_confirmation"  id="myInput2" placeholder="Nhập Mật Khẩu">
+				<span>
+					<input type="checkbox" onclick="myFunction()">Hiển thị mật khẩu
+				</span>
 				@if ($errors->has('password_confirmation'))
 				<p class="help is-danger" STYLE="COLOR:RED;">{{ $errors->first('password_confirmation') }}</p>
 				@endif
@@ -54,6 +57,17 @@
 			</div>
 			@endif
 		</div>
+		<script>function myFunction() {
+			var x = document.getElementById("myInput");
+			var y = document.getElementById("myInput2");
+			if (x.type == "password" || y.type == "password_confirmation") {
+			  x.type = "text";
+			  y.type = "text";
+			} else {
+			  x.type = "password";
+			  y.type = "password";
+			}
+		  }</script>
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
