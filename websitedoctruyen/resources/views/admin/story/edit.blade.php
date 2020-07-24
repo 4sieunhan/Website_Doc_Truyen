@@ -19,7 +19,7 @@
                   <div class="card-body">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Tên truyện</label>
-                        <input type="text" name="name" value="{{$stories->name}}" class="form-control" id="exampleText" placeholder="Nhập tên truyện">
+                        <input type="text" name="name" value="{{$stories->name}}" class="form-control"  placeholder="Nhập tên truyện">
                      </div>
                      @if ($errors->has('name'))
                      <p class="help is-danger" STYLE="COLOR:RED;">{{ $errors->first('name') }}</p>
@@ -74,16 +74,19 @@
                         <label for="">Ảnh đại diện</label>
                         <input name="image" type="file" class="form-control" />
                      </div>
+                     @if ($errors->has('image'))
+                     <p class="help is-danger" STYLE="COLOR:RED;">{{ $errors->first('image') }}</p>
+                     @endif
                      <div class="form-group">
                         <label for="">Từ khóa</label>
-                        <input type="text" name="keyword" class="form-control" id="exampleText" placeholder="Nhập từ khóa">
+                        <input type="text" name="keyword" class="form-control"  placeholder="Nhập từ khóa">
                      </div>
                      @if ($errors->has('keyword'))
                      <p class="help is-danger" STYLE="COLOR:RED;">{{ $errors->first('keyword') }}</p>
                      @endif
                      <div class="form-group">
                         <label for="">Nguồn truyện</label>
-                        <input type="text" name="source" class="form-control" id="exampleText" placeholder="Nhập nguồn truyện">
+                        <input type="text" name="source" class="form-control"  placeholder="Nhập nguồn truyện">
                      </div>
                      @if ($errors->has('source'))
                      <p class="help is-danger" STYLE="COLOR:RED;">{{ $errors->first('source') }}</p>

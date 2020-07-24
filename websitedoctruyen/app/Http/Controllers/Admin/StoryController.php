@@ -47,23 +47,25 @@ class StoryController extends Controller
             'source.required' => 'Nguồn truyện bắt buộc nhập',
             'authors_id.required' => 'Tác giả bắt buộc chọn',
             'categories_id.required' => 'Chuyên mục bắt buộc chọn',
-            'keyword.max' => 'Từ khóa không được vượt quá 15 ký tự',
+            'keyword.max' => 'Từ khóa không được vượt quá 255 ký tự',
             'name.max' => 'Từ khóa không được vượt quá 100 ký tự',
-            'source.max' => 'Từ khóa không được vượt quá 25 ký tự',
+            'source.max' => 'Từ khóa không được vượt quá 255 ký tự',
             'description.max' => 'Từ khóa không được vượt quá 255 ký tự',
             'content.max' => 'Từ khóa không được vượt quá 255 ký tự',
             'keyword.min'=> 'Nhập tối thiểu 5 ký tự',
-            'name.min' => 'Nhập tối thiểu 10 ký tự',
             'source.min' => 'Nhập tối thiểu 5 ký tự',
+            'image.required' => 'Bắt buộc gắn ảnh',
+            'image.mimes' => 'Hình ảnh phải là một loại tệp: png, jpg.'
         ];
         $validatedData =$request->validate([
-            'name' => 'required|min:10|max:100|',
-            'keyword' => 'required|min:5|max:15|',
+            'name' => 'required|max:100|',
+            'keyword' => 'required|min:5|max:255|',
             'description' => 'required|max:255|',
             'content' => 'required|max:255|',
-            'source' => 'required|min:5|max:25|',
-            'authors_id' => 'required',
-            'categories_id' => 'required',
+            'source' => 'required|min:5|max:255|',
+            'image' => 'mimes:jpeg,jpg,png|required|max:10000',
+            'authors_id' => 'required|not_in:0',
+            'categories_id' => 'required|not_in:0',
         ],$messages);
         $stories = new Stories;
         
@@ -141,23 +143,25 @@ class StoryController extends Controller
             'source.required' => 'Nguồn truyện bắt buộc nhập',
             'authors_id.required' => 'Tác giả bắt buộc chọn',
             'categories_id.required' => 'Chuyên mục bắt buộc chọn',
-            'keyword.max' => 'Từ khóa không được vượt quá 15 ký tự',
+            'keyword.max' => 'Từ khóa không được vượt quá 255 ký tự',
             'name.max' => 'Từ khóa không được vượt quá 100 ký tự',
-            'source.max' => 'Từ khóa không được vượt quá 25 ký tự',
+            'source.max' => 'Từ khóa không được vượt quá 255 ký tự',
             'description.max' => 'Từ khóa không được vượt quá 255 ký tự',
             'content.max' => 'Từ khóa không được vượt quá 255 ký tự',
             'keyword.min'=> 'Nhập tối thiểu 5 ký tự',
-            'name.min' => 'Nhập tối thiểu 10 ký tự',
             'source.min' => 'Nhập tối thiểu 5 ký tự',
+            'image.required' => 'Bắt buộc gắn ảnh',
+            'image.mimes' => 'Hình ảnh phải là một loại tệp: png, jpg.'
         ];
         $validatedData =$request->validate([
-            'name' => 'required|min:10|max:100|',
-            'keyword' => 'required|min:5|max:15|',
+            'name' => 'required|max:100|',
+            'keyword' => 'required|min:5|max:255|',
             'description' => 'required|max:255|',
             'content' => 'required|max:255|',
-            'source' => 'required|min:5|max:25|',
-            'authors_id' => 'required',
-            'categories_id' => 'required',
+            'source' => 'required|min:5|max:255|',
+            'image' => 'mimes:jpeg,jpg,png|required|max:10000',
+            'authors_id' => 'required|not_in:0',
+            'categories_id' => 'required|not_in:0',
         ],$messages);
         //update edit view story
         $data= array(

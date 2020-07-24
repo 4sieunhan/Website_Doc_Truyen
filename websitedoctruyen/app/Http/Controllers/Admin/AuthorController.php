@@ -48,10 +48,10 @@ class AuthorController extends Controller
             'name.max' => 'Từ khóa không được vượt quá 35 ký tự',
             'description.max' => 'Từ khóa không được vượt quá 255 ký tự',
             'keyword.min'=> 'Nhập tối thiểu 5 ký tự',
-            'name.min' => 'Nhập tối thiểu 10 ký tự',
+            'name.min' => 'Nhập tối thiểu 4 ký tự',
         ];
         $validatedData =$request->validate([
-            'name' => 'required|min:10|max:35|',
+            'name' => 'required|min:4|max:35|',
             'keyword' => 'required|min:5|max:15|',
             'description' => 'required|max:255|',
         ],$messages);

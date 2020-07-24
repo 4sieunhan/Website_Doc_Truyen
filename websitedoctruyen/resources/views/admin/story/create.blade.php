@@ -19,14 +19,14 @@
                   <div class="card-body">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Tên truyện</label>
-                        <input type="text" name="name" class="form-control" id="exampleText" placeholder="Nhập tên truyện">
+                        <input type="text" name="name" class="form-control" placeholder="Nhập tên truyện">
                      </div>
                      @if ($errors->has('name'))
                      <p class="help is-danger" STYLE="COLOR:RED;">{{ $errors->first('name') }}</p>
                      @endif
                      <div class="form-group">
                         <label >Chuyên mục</label>
-                        <select id="done" class="selectpicker" name="categories_id[]" multiple data-done-button="true">
+                        <select  class="selectpicker" name="categories_id[]" multiple data-done-button="true">
                            @foreach(App\Models\Categories::get() as $category)
                            <option value="{{$category->id}}"  >{{$category->name}}</option>
                            @endforeach
@@ -37,7 +37,7 @@
                      @endif
                      <div class="form-group">
                         <label >Tác giả</label>
-                        <select id="done" class="selectpicker" name="authors_id[]" multiple data-done-button="true">
+                        <select  class="selectpicker" name="authors_id[]" multiple data-done-button="true">
                            @foreach(App\Models\Authors::get() as $author)
                            <option value="{{$author->id}}">{{$author->name}}</option>
                            @endforeach
@@ -74,16 +74,19 @@
                         <label for="">Ảnh đại diện</label>
                         <input name="image" type="file" class="form-control" />
                      </div>
+                     @if ($errors->has('image'))
+                     <p class="help is-danger" STYLE="COLOR:RED;">{{ $errors->first('image') }}</p>
+                     @endif
                      <div class="form-group">
                         <label for="">Từ khóa</label>
-                        <input type="text" name="keyword" class="form-control" id="exampleText" placeholder="Nhập từ khóa">
+                        <input type="text" name="keyword" class="form-control"  placeholder="Nhập từ khóa">
                      </div>
                      @if ($errors->has('keyword'))
                      <p class="help is-danger" STYLE="COLOR:RED;">{{ $errors->first('keyword') }}</p>
                      @endif
                      <div class="form-group">
                         <label for="">Nguồn truyện</label>
-                        <input type="text" name="source" class="form-control" id="exampleText" placeholder="Nhập nguồn truyện">
+                        <input type="text" name="source" class="form-control"  placeholder="Nhập nguồn truyện">
                      </div>
                      @if ($errors->has('source'))
                      <p class="help is-danger" STYLE="COLOR:RED;">{{ $errors->first('source') }}</p>
@@ -115,15 +118,4 @@
       <!-- /.container-fluid -->
    </section>
 </form>
-<script>
-   // Replace the <textarea id="editor1"> with an CKEditor
-   // instance, using default configurations.
-   CKEDITOR.replace( 'description', {
-       uiColor: '#A9E3EC',
-   });
-   CKEDITOR.replace( 'content', {
-       uiColor: '#A9E3EC',
-   });
-   
-</script>
 @endsection

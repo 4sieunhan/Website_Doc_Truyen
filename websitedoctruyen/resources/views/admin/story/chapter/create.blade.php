@@ -20,6 +20,9 @@
                      <div class="form-group">
                         <input type="text" name="subname" class="form-control" id="exampleText" placeholder="Nhập tên mục">
                      </div>
+                     @if ($errors->has('subname'))
+                     <p class="help is-danger" STYLE="COLOR:RED;">{{ $errors->first('subname') }}</p>
+                     @endif 
                      <div class="form-group">
                         <label for="exampleInputEmail1">Tên chương</label>
                         <input type="text" name="name" class="form-control" id="exampleText" placeholder="Nhập tên chương">

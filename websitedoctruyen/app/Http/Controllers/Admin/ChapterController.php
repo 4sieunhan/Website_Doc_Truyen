@@ -42,13 +42,14 @@ class ChapterController extends Controller
     {
         $messages = [
             'name.required' => 'Tiêu đề bắt buộc nhập',
-            'content.required' => 'tên chương bắt buộc nhập',
-            'name.max' => 'Từ khóa không được vượt quá 35 ký tự',
+            'subname.required' => 'Tên chương bắt buộc nhập',
+            'subname.max' => 'Từ khóa không được vượt quá 35 ký tự',
             'content.max' => 'Mô tả không được vượt quá 255 ký tự',
-            'name.min' => 'Nhập tối thiểu 10 ký tự',
+            'content.required' => 'Nội Dung Bắt Buộc Nhập'
         ];
         $validatedData =$request->validate([
-            'name' => 'required|min:10|max:35|',
+            'subname' => 'required|max:35',
+            'name' => 'required',
             'content' => 'required|max:255|',
         ],$messages);
 
@@ -98,14 +99,16 @@ class ChapterController extends Controller
     public function update(Request $request, $id)
     {
         $messages = [
-            'name.required' => 'Tên chương bắt buộc nhập',
-            'content.required' => 'Nội dung bắt buộc nhập',
-            'name.max' => 'Từ khóa không được vượt quá 35 ký tự',
-            'content.max' => 'Nội dung không được vượt quá 255 ký tự',
-            'name.min' => 'Nhập tối thiểu 10 ký tự',
+            'name.required' => 'Tiêu đề bắt buộc nhập',
+            'subname.required' => 'Tên chương bắt buộc nhập',
+            'subname.max' => 'Từ khóa không được vượt quá 35 ký tự',
+            'content.max' => 'Mô tả không được vượt quá 255 ký tự',
+            'subname.min' => 'Nhập tối thiểu 10 ký tự',
+            'content.required' => 'Nội Dung Bắt Buộc Nhập'
         ];
         $validatedData =$request->validate([
-            'name' => 'required|min:10|max:35|',
+            'subname' => 'required|min:10|max:35|',
+            'name' => 'required',
             'content' => 'required|max:255|',
         ],$messages);
         $data = array(

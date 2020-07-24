@@ -30,7 +30,6 @@
 <!-- AdminLTE App -->
 <script src="{{asset('dist/js/adminlte.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{asset('dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('dist/js/demo.js')}}"></script>
 <!-- Bootstrap 4 -->
@@ -41,26 +40,24 @@
 <script src="{{asset('plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
 <script src="{{asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
 <!-- AdminLTE App -->
+<!-- ckeditor-->
+<script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="{{asset('select/dist/js/bootstrap-select.js')}}"></script>
 <script>
-   $(function () {
-     $("#example1").DataTable({
-       "responsive": true,
-       "autoWidth": false,
-     });
-     $('#example2').DataTable({
-       "paging": true,
-       "lengthChange": false,
-       "searching": false,
-       "ordering": true,
-       "info": true,
-       "autoWidth": false,
-       "responsive": true,
-     });
-   });
+  // Replace the <textarea id="editor1"> with an CKEditor
+  // instance, using default configurations.
+CKEDITOR.replace( 'description', {
+    uiColor: '#A9E3EC',
+});
+CKEDITOR.replace( 'content', {
+    uiColor: '#A9E3EC',
+});
+
+</script>
+<script>
    function acceptDelete(msg){
        if(window.confirm(msg) == true)
        {
@@ -69,42 +66,5 @@
        return false;
    }
 </script>
-<script>
-   function createOptions(number) {
-     var options = [], _options;
-   
-     for (var i = 0; i < number; i++) {
-       var option = '<option value="' + i + '">Option ' + i + '</option>';
-       options.push(option);
-     }
-   
-     _options = options.join('');
-     
-     $('#number')[0].innerHTML = _options;
-     $('#number-multiple')[0].innerHTML = _options;
-   
-   
-     $('#number2')[0].innerHTML = _options;
-     $('#number2-multiple')[0].innerHTML = _options;
-   }
-   
-   var mySelect = $('#first-disabled2');
-   
-   createOptions(4000);
-   
-   $('#special').on('click', function () {
-     mySelect.find('option:selected').prop('disabled', true);
-     mySelect.selectpicker('refresh');
-   });
-   
-   $('#special2').on('click', function () {
-     mySelect.find('option:disabled').prop('disabled', false);
-     mySelect.selectpicker('refresh');
-   });
-   
-   $('#basic2').selectpicker({
-     liveSearch: true,
-     maxOptions: 1
-   });
-</script>
+
 
