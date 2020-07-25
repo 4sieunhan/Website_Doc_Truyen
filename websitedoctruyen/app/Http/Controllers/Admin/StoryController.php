@@ -164,11 +164,15 @@ class StoryController extends Controller
             'categories_id' => 'required|not_in:0',
         ],$messages);
         //update edit view story
+                
+        $file = $request->image;
+        $file->move('upload', $file->getClientOriginalName());
+        
         $data= array(
             'name' => $request->name,
             'content' => $request->content,
             'description' => $request->description,
-            'image' => $request->image,
+            'image' => $file->getClientOriginalName(),
             'keyword' => $request->keyword,
             'source' => $request->source,
             'status' => $request->status

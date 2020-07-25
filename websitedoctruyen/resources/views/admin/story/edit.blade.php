@@ -3,7 +3,7 @@
 @section('h1','Sửa truyện')
 @section('button','Tạo Mới')
 <!-- Main content -->
-<form method="POST" action="{{route('admin.story.update',['id' => $stories->id])}}">
+<form enctype="multipart/form-data" method="POST" action="{{route('admin.story.update',['id' => $stories->id])}}">
    @csrf
    <section class="content">
       <div class="container-fluid">
