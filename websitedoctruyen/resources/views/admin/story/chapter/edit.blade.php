@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('content')
 @section('h1','Sửa mới chương')
-@section('button','Tạo Mới')
+@section('button','Chỉnh Sửa')
 <!-- Main content -->
 <form enctype="multipart/form-data" method="POST" action="{{route('admin.story.chapter.update',['id' => $chapters->id])}}">
    @csrf

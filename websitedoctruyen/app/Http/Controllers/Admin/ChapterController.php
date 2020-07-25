@@ -103,11 +103,10 @@ class ChapterController extends Controller
             'subname.required' => 'Tên chương bắt buộc nhập',
             'subname.max' => 'Từ khóa không được vượt quá 35 ký tự',
             'content.max' => 'Mô tả không được vượt quá 255 ký tự',
-            'subname.min' => 'Nhập tối thiểu 10 ký tự',
             'content.required' => 'Nội Dung Bắt Buộc Nhập'
         ];
         $validatedData =$request->validate([
-            'subname' => 'required|min:10|max:35|',
+            'subname' => 'required|max:35',
             'name' => 'required',
             'content' => 'required|max:255|',
         ],$messages);
