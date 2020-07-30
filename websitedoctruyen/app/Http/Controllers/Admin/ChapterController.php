@@ -129,7 +129,7 @@ class ChapterController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {  
+    {
         Chapters::destroy('id',$id);
         return redirect()->back();
     }

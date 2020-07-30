@@ -1,0 +1,12 @@
+<img src="{{asset('login/images/block-image/1.png')}}" data-speed="-5" class="layer" alt="">
+<img src="{{asset('login/images/block-image/2.png')}}" data-speed="5" class="layer" alt="">
+<img src="{{asset('login/images/block-image/3.png')}}" data-speed="2" class="layer" alt="">
+<img src="{{asset('login/images/block-image/4.png')}}" data-speed="6" class="layer" alt="">
+<img src="{{asset('login/images/block-image/5.png')}}" data-speed="8" class="layer" alt="">
+<img src="{{asset('login/images/block-image/6.png')}}" data-speed="-2" class="layer" alt="">
+<img src="{{asset('login/images/block-image/7.png')}}" data-speed="4" class="layer" alt="">
+<img src="{{asset('login/images/block-image/8.png')}}" data-speed="-9" class="layer" alt="">
+<img src="{{asset('login/images/block-image/9.png')}}" data-speed="6" class="layer" alt="">
+<img src="{{asset('login/images/block-image/10.png')}}" data-speed="-7" class="layer" alt="">
+<img src="{{asset('login/images/block-image/11.png')}}" data-speed="-5" class="layer" alt="">
+<img src="{{asset('login/images/block-image/12.png')}}" data-speed="5" class="layer" alt="">

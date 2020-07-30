@@ -47,8 +47,8 @@ class LoginController extends Controller
             'password.min' => 'Mật khẩu phải chứa ít nhất 6 ký tự',
         ];
         $validator = Validator::make($request->all(), $rules, $messages);
-        
-        
+
+
         if ($validator->fails()) {
             // Điều kiện dữ liệu không hợp lệ sẽ chuyển về trang đăng nhập và thông báo lỗi
             return redirect()->route('login.dangnhap')->withErrors($validator)->withInput();
@@ -56,7 +56,7 @@ class LoginController extends Controller
             // Nếu dữ liệu hợp lệ sẽ kiểm tra trong csdl
             $email = $request->input('email');
             $password = $request->input('password');
-    
+
             if( Auth::attempt(['email' => $email, 'password' =>$password])) {
                 // Kiểm tra đúng email và mật khẩu sẽ chuyển trang
                 return redirect()->route('admin.home');
@@ -114,7 +114,7 @@ class LoginController extends Controller
             'password_confirmation.required_with' => 'Chưa Nhập Lại Mật Khẩu'
         ];
         $validator = Validator::make($request->all(), $rules, $messages);
-        
+
 
         if ($validator->fails()) {
             // Điều kiện dữ liệu không hợp lệ sẽ chuyển về trang đăng nhập và thông báo lỗi
@@ -141,5 +141,5 @@ class LoginController extends Controller
     public function logout(){
         Auth::logout();
         return redirect()->route('login.dangnhap');
-    }   
+    }
 }
