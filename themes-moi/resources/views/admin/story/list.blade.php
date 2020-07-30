@@ -49,7 +49,7 @@
                      @foreach($stories as $str)
                      <tr>
                         <td>{{$str->name}}</td>
-                        <td><img src="{{URL::to('/upload/' . $str->image)}}"alt="" style="width:100px;height:100px;"/></td>
+                        <td><img src="{{URL::to('/upload/image-story/' . $str->image)}}"alt="" style="width:100px;height:100px;"/></td>
                         <td>
                            @foreach($str->category as $rl)
                            {{$loop->first ? '' : ', '}}

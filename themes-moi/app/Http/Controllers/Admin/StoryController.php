@@ -70,7 +70,7 @@ class StoryController extends Controller
         $stories = new Stories;
 
         $file = $request->image;
-        $file->move('upload', $file->getClientOriginalName());
+        $file->move('upload/image-story', $file->getClientOriginalName());
 
         //them du lieu vao trong table('stories')
         $InsertStories = Stories::insertGetId([

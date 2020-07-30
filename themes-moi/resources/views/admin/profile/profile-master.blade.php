@@ -8,13 +8,15 @@
 		<div class="card">
 			<div class="body">
 				<div>
-					@include('admin.profile.blocks.profile-navbar')
+                    @include('admin.profile.blocks.profile-navbar')
 					<div class="tab-content">
-						<div role="tabpanel" class="tab-pane fade in" id="profile_settings">
-							@include('admin.profile.blocks.profile-settings')
-						</div>
+                        <div role="tabpanel" class="tab-pane fade in active" id="profile_settings">
+                            <div class="panel panel-default panel-post">
+                                @include('admin.profile.blocks.profile-settings')
+                            </div>
+                        </div>
 						<div role="tabpanel" class="tab-pane fade in" id="change_password_settings">
-							@include('admin.profile.blocks.profile-change-password')
+                                @include('admin.profile.blocks.profile-change-password')
 						</div>
 					</div>
 				</div>

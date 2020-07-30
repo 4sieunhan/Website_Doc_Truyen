@@ -73,6 +73,7 @@ class LoginController extends Controller
             $user = new Users();
             $user->email = $request->email;
             $user->password = bcrypt($request->password);
+            $user->avatar = "avatar-default.jpg";
             $user->updated_at = $user['created_at'];
             $user->save();
             if($user->save() == 1) {

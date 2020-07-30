@@ -14,7 +14,7 @@ body{
 .main{
     position: relative;
     width: 350px;
-    height: 500px;
+    height: 550px;
     background: red;
     color: #fff;
     overflow: hidden;
@@ -109,6 +109,7 @@ strong{
     height: 20px;
     display: flex;
     margin: 0 auto;
+    padding:10px;
     text-align: center;
     color:red;
 }
@@ -117,6 +118,7 @@ i{
     height: 20px;
     display: flex;
     margin: 0 auto;
+    padding: 20px;
     text-align: center;
     color:red;
 }

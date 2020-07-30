@@ -7893,7 +7893,8 @@ fieldset[disabled] .form-control {
   margin-top: -64px; }
   .profile-card .profile-body .image-area img {
     border: 2px solid #ad1455;
-    padding: 2px;
+    max-width: 100%;
+    height: auto;
     margin: 2px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;

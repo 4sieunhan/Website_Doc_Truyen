@@ -24,7 +24,8 @@ Route::middleware('check_in')->namespace('Admin')->prefix('admin')->name('admin.
     Route::get('home','HomeController@index')->name('home');
     Route::prefix('profile')->name('profile.')->group(function(){
         Route::get('thongtincanhan','ProfileController@index')->name('index');
-        Route::post('store','ProfileController@profile_settings')->name('profile-settings');
+        Route::post('update-profile','ProfileController@profile_settings')->name('profile-settings');
+        Route::post('update-password','ProfileController@profile_change_password')->name('profile-change-password');
     });
     Route::prefix('category')->name('category.')->group(function(){
         Route::get('list','CategoryController@list')->name('list');
