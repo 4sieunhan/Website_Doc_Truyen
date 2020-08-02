@@ -106,4 +106,35 @@ class ProfileController extends Controller
             }
         }
     }
+    public function update_avatar(Request $request){
+        $rules = [
+            'avatar' => 'mimes:jpeg,jpg,png|required|max:10000'
+        ];
+        $messages = [
+            'avatar.required' => 'Bắt buộc gắn ảnh',
+            'avatar.mimes' => 'Hình ảnh phải là một loại tệp: png, jpg.'
+        ];
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if ($validator->fails()) {
+            // Điều kiện dữ liệu không hợp lệ sẽ chuyển về trang profile và thông báo lỗi
+            return redirect()->route('admin.profile.index')->withErrors($validator)->withInput();
+        } else {
+            $file = $request->avatar;
+            $file->move('upload/avatar-user', $file->getClientOriginalName());
+            $data = array (
+                'avatar' => $file->getClientOriginalName(),
+            );
+            $id_user = auth()->user()->id;
+            $update = Users::where('id',$id_user)->update($data);
+            if($update == 1) {
+                // Insert thành công sẽ hiển thị thông báo
+                Session::flash('success-avatar', 'Bạn đã thay đổi ảnh đại diện thành công!');
+			    return redirect()->route('admin.profile.index');
+            } else {
+                // Insert thất bại sẽ hiển thị thông báo lỗi
+                Session::flash('error-avatar', 'Bạn đã thay đổi ảnh đại diện thất bại!');
+                return redirect()->route('admin.profile.index');
+            }
+        }
+    }
 }

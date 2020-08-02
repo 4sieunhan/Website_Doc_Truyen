@@ -31,3 +31,5 @@
 <link href="{{asset('plugins/bootstrap-select/css/bootstrap-select.css')}}" rel="stylesheet" />
 <!-- Dropzone Css -->
 <link href="{{asset('plugins/dropzone/dropzone.css')}}" rel="stylesheet">
+<!-- Dropzone Css -->
+<link href="{{asset('plugins/dropzone/dropzone.css')}}" rel="stylesheet">

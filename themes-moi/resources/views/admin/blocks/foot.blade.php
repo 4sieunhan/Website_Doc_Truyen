@@ -59,6 +59,25 @@ CKEDITOR.replace( 'content', {
     uiColor: '#A9E3EC',
 });
 </script>
+<script>
+    $("#upfile1").click(function () {
+    $("#file1").trigger('click');
+});
+</script>
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
 
+            reader.onload = function (e) {
+                $('#upfile1').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#file1").change(function(){
+        readURL(this);
+    });
+</script>
 
 

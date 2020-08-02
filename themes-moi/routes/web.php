@@ -26,6 +26,7 @@ Route::middleware('check_in')->namespace('Admin')->prefix('admin')->name('admin.
         Route::get('thongtincanhan','ProfileController@index')->name('index');
         Route::post('update-profile','ProfileController@profile_settings')->name('profile-settings');
         Route::post('update-password','ProfileController@profile_change_password')->name('profile-change-password');
+        Route::post('update-avatar','ProfileController@update_avatar')->name('update-avatar');
     });
     Route::prefix('category')->name('category.')->group(function(){
         Route::get('list','CategoryController@list')->name('list');

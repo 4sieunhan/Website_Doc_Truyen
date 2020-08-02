@@ -1,16 +1,20 @@
 <div class="card profile-card">
-	<div class="profile-header">&nbsp;</div>
-	<div class="profile-body">
-		<div class="image-area">
-			<img src="{{URL::to('/upload/avatar-user/default/' . auth()->user()->avatar)}}" alt="Avatar-User" />
-		</div>
-		<div class="content-area">
-			<h3>{{auth()->user()->name}}</h3>
-            <p>{{auth()->user()->email}}</p>
-			<p>Administrator</p>
-        </div>
-        <div class="profile-footer">
+    <div class="profile-header">&nbsp;</div>
+    <div class="profile-body">
+       <form action="{{route('admin.profile.update-avatar')}}" method="POST" enctype="multipart/form-data">
+          @csrf
+          <div class="image-area">
+             <img src="{{URL::to('/upload/avatar-user/' . auth()->user()->avatar)}}" id="upfile1" alt="Avatar-User"/>
+             <input type="file" id="file1"  name="avatar" style="display:none" />
+          </div>
+          <div class="content-area">
+             <h3>{{auth()->user()->name}}</h3>
+             <p>{{auth()->user()->email}}</p>
+             <p>Administrator</p>
+          </div>
+          <div class="profile-footer">
             <button class="btn btn-primary btn-lg waves-effect btn-block">Thay Đổi Ảnh</button>
-        </div>
-	</div>
-</div>
+          </div>
+       </form>
+    </div>
+ </div>

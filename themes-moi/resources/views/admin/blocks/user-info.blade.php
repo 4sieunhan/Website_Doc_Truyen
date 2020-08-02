@@ -1,6 +1,6 @@
 <div class="user-info">
     <div class="image">
-        <img src="{{URL::to('/upload/avatar-user/default/' . auth()->user()->avatar)}}" width="48" height="48" alt="User" />
+        <img src="{{URL::to('/upload/avatar-user/' . auth()->user()->avatar)}}" width="68" height="58" alt="User" />
     </div>
     <div class="info-container">
         <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{auth()->user()->name}}</div>

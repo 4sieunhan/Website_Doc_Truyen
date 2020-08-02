@@ -7894,7 +7894,8 @@ fieldset[disabled] .form-control {
   .profile-card .profile-body .image-area img {
     border: 2px solid #ad1455;
     max-width: 100%;
-    height: auto;
+    width: 200px;
+    height: 150px;
     margin: 2px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
