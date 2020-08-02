@@ -13,7 +13,14 @@
              <p>Administrator</p>
           </div>
           <div class="profile-footer">
-            <button class="btn btn-primary btn-lg waves-effect btn-block">Thay Đổi Ảnh</button>
+            <button class="btn btn-primary btn-lg waves-effect btn-block">
+                @if ($errors->has('avatar'))
+                <p class="help is-danger" STYLE="COLOR:white;">{{ $errors->first('avatar') }}</p>
+                @else
+                Thay Đổi Ảnh
+                @endif
+            </button>
+
           </div>
        </form>
     </div>

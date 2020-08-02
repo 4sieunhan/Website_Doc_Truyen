@@ -111,8 +111,8 @@ class ProfileController extends Controller
             'avatar' => 'mimes:jpeg,jpg,png|required|max:10000'
         ];
         $messages = [
-            'avatar.required' => 'Bắt buộc gắn ảnh',
-            'avatar.mimes' => 'Hình ảnh phải là một loại tệp: png, jpg.'
+            'avatar.required' => 'Bạn chưa gắn ảnh mới',
+            'avatar.mimes' => 'Hình ảnh phải là một loại tệp: png, jpg.',
         ];
         $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {

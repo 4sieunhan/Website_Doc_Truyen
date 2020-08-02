@@ -1,21 +1,3 @@
-@if ( Session::has('success-profile') )
-<div class="alert bg-green alert-dismissible" role="alert">
-	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	{{ Session::get('success-profile') }}
-</div>
-@endif
-@if ( Session::has('success-password') )
-<div class="alert bg-green alert-dismissible" role="alert">
-	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	{{ Session::get('success-password') }}
-</div>
-@endif
-@if ( Session::has('success-avatar') )
-<div class="alert bg-green alert-dismissible" role="alert">
-	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	{{ Session::get('success-avatar') }}
-</div>
-@endif
 <form class="form-horizontal" action="{{route('admin.profile.profile-settings')}}" method="POST">
 	@csrf
 	<div class="form-group">
@@ -45,3 +27,21 @@
 		</div>
 	</div>
 </form>
+@if ( Session::has('success-profile') )
+<div class="alert bg-green alert-dismissible" role="alert">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	{{ Session::get('success-profile') }}
+</div>
+@endif
+@if ( Session::has('success-password') )
+<div class="alert bg-green alert-dismissible" role="alert">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	{{ Session::get('success-password') }}
+</div>
+@endif
+@if ( Session::has('success-avatar') )
+<div class="alert bg-green alert-dismissible" role="alert">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	{{ Session::get('success-avatar') }}
+</div>
+@endif
